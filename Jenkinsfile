@@ -13,7 +13,7 @@ pipeline {
         }
          stage('Trivy Scan') {
             steps {
-                sh "trivy image chakalimurali/paymentservice:latest"
+                sh "trivy image chakalimurali/paymentservice:latest >> payment.txt"
             }
         }
         
