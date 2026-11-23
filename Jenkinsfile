@@ -13,7 +13,7 @@ pipeline {
         }
          stage('Trivy Scan') {
             steps {
-                sh "trivy image chakalimurali/recommendationservice:latest"
+                sh "trivy image chakalimurali/recommendationservice:latest >> reccomand.txt"
             }
         }
         stage('Push Docker Image') {
