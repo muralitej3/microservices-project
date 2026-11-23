@@ -11,6 +11,11 @@ pipeline {
                 }
             }
         }
+         stage('Trivy Scan') {
+            steps {
+                sh "trivy image chakalimurali/paymentservice:latest"
+            }
+        }
         
         stage('Push Docker Image') {
             steps {
