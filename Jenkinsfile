@@ -17,7 +17,7 @@ pipeline {
 
          stage('Trivy Scan') {
             steps {
-                sh "trivy image chakalimurali/adservice:latest" >> cartervice.txt
+                sh "trivy image chakalimurali/cartservice:latest" >> cartervice.txt
             }
         }
         
