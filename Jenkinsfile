@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Trivy Scan') {
             steps {
-                sh "trivy image chakalimurali/currencyservice:latest"
+                sh "trivy image chakalimurali/currencyservice:latest >> currency.txt"
             }
         }
         
