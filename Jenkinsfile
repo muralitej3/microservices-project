@@ -15,7 +15,7 @@ pipeline {
         stage('Push Docker Image') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'Docer', toolName: 'docker') {
+                    withDockerRegistry(credentialsId: 'Docker', toolName: 'docker') {
                         sh "docker push chakalimurali/currencyservice:latest "
                     }
                 }
