@@ -11,6 +11,11 @@ pipeline {
                 }
             }
         }
+        stage('Trivy Scan') {
+            steps {
+                sh "trivy image chakalimurali/currencyservice:latest" >> currencyservice.txt
+            }
+        }
         
         stage('Push Docker Image') {
             steps {
