@@ -13,7 +13,7 @@ pipeline {
         }
          stage('Trivy Scan') {
             steps {
-                sh "trivy image chakalimurali/frontendservice:latest"
+                sh "trivy image chakalimurali/frontend:latest"
             }
         }
         
