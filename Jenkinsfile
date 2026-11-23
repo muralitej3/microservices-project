@@ -11,16 +11,18 @@ pipeline {
                 }
             }
         }
-        stage ('trivy'){
-            steps{
+
+        stage('Trivy Scan') {
+            steps {
                 sh "trivy image chakalimurali/adservice:latest"
             }
         }
+
         stage('Push Docker Image') {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'Docker', toolName: 'docker') {
-                        sh "docker push chakalimurali/adservice:latest "
+                        sh "docker push chakalimurali/adservice:latest"
                     }
                 }
             }
