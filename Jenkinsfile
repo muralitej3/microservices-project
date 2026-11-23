@@ -13,7 +13,7 @@ pipeline {
         }
          stage('Trivy Scan') {
             steps {
-                sh "trivy image chakalimurali/emailservice:latest"
+                sh "trivy image chakalimurali/emailservice:latest >> email.txt"
             }
         }
         stage('Push Docker Image') {
