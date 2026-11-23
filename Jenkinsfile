@@ -11,6 +11,11 @@ pipeline {
                 }
             }
         }
+        stage('Trivy Scan') {
+            steps {
+                sh "trivy image chakalimurali/shippingservice:latest >> shipping.txt"
+            }
+        }
         
         stage('Push Docker Image') {
             steps {
